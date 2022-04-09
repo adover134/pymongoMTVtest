@@ -28,8 +28,8 @@ def all_users(request):
 
         users = []
         for user in dbUserData:
-            del user['_id']
-        users.append(user)
+            user['u_id']=str(user['_id'])
+            users.append(user)
 
         template = loader.get_template('test.html')
         return HttpResponse(template.render({'userData': users}, request))

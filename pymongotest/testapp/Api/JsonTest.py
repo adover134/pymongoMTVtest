@@ -48,10 +48,6 @@ def all_users(request):
         response = []
         print(users)
         for user in users:
-            if '_id' in user:
-                print('true')
-                hi=user['_id']
-                print(str(hi))
             user['_id']=str(user['_id'])
             response.append(user)
 
